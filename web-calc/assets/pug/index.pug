@@ -1,0 +1,39 @@
+include _config.pug
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width")
+    title #{siteName}
+    include _icon.pug
+    link(rel="stylesheet", href=cssUrl+"common.css")
+    link(rel="stylesheet", href=cssUrl+"index.css")
+    script(src=jsUrl+"common.js")
+  body
+    select#languageSelect
+      option(value="en") English
+      option(value="ja") 日本語
+    h1
+      span.en(lang="en") Web Calclation Tool
+      span.ja(lang="ja") ウェブ計算ツール
+    nav
+      ul
+        li
+          a(href="web-calc.html")
+            span.en(lang="en") Website Calculation Tool
+            span.ja(lang="ja") ウェブサイト計算ツール
+        li
+          a(href="about.html")
+            span.en(lang="en") About me
+            span.ja(lang="ja") 私について
+    p
+      span.en(lang="en")
+        a(href="https://apps.apple.com/us/app/web-calculation-tool/id1478851396?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-09-05&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:50px;")
+        a(href="https://play.google.com/store/apps/details?id=net.eucreate.webcalclationtool&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1")
+          img(alt="Get it on Google Play" src="https://play.google.com/intl/ja_jp/badges/images/generic/en_badge_web_generic.png" height="60")
+      span.ja(lang="ja")
+        a(href="https://apps.apple.com/jp/app/%E3%82%A6%E3%82%A7%E3%83%96%E8%A8%88%E7%AE%97%E3%83%84%E3%83%BC%E3%83%AB/id1478851396?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-05&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:50px;")
+        a(href="https://play.google.com/store/apps/details?id=net.eucreate.webcalclationtool&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1")
+          img(alt="Google Play で手に入れよう" src="https://play.google.com/intl/ja_jp/badges/images/generic/ja_badge_web_generic.png" height="60")
+    include _pageFooter

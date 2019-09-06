@@ -1,0 +1,43 @@
+@import base
+
+html
+  font-size: 100%
+body
+  font-size: 16px
+  font-family: sans-serif
+  text-size-adjust: 100%
+h1
+  border-bottom: solid 3px $baseColor
+  &[lang="ja"]
+    font-feature-settings: 'palt' 1
+h2, h3
+  padding: .25em .5em
+  background-color: $baseColor
+  color: #fff
+  border-radius: 5px
+.en
+  display: inline
+.ja
+  display: none
+select
+  font-size: 1rem
+.back
+  position: relative
+  display: inline-flex
+  align-items: center
+  height: 36px
+  padding-right: 10px
+  box-sizing: border-box
+  border: 2px solid $baseColor
+  border-radius: (36px / 2)
+  color: $baseColor
+  text-decoration: none
+  &:before
+    content: ''
+    display: inline-flex
+    width: 10px
+    height: 10px
+    margin-left: 10px
+    border-bottom: 4px solid $baseColor
+    border-left: 4px solid $baseColor
+    transform: rotate(45deg)

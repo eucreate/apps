@@ -1,0 +1,123 @@
+include _config.pug
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width")
+    title Website Calculation Tool（ウェブサイト計算ツール） - #{siteName}
+    include _icon.pug
+    link(rel="stylesheet", href=cssUrl+"common.css")
+    link(rel="stylesheet", href=cssUrl+"web-calc.css")
+    script(src=jsUrl+"common.js")
+    script(src=jsUrl+"web-calc.js")
+  body
+    include _pageHeader.pug
+    h1
+      span.en(lang="en") Website Calculation Tool
+      span.ja(lang="ja") ウェブサイト計算ツール
+    p
+      span.en(lang="en") A calculation tool useful for web design and website creation.
+      span.ja(lang="ja") ウェブデザインやwebサイト制作に役立つ計算ツールです。
+    p
+      span.en(lang="en")
+        | The metallic means and aspect ratio is calculated based on the input value entered in "Standard pixel".
+        br
+        | "%, vw, vh, em, rem" is calculated by inputting the standard pixel and the pixel to calculate.
+      span.ja(lang="ja") 貴金属比やアスペクト比は入力値が「基準ピクセル」に入力した値で計算されます。
+        br
+        | 「%, vw, vh, em, rem」の計算は、基準ピクセルと求めるピクセルを入力することで計算されます。
+    h2
+      span.en(lang="en") Numeric input
+      span.ja(lang="ja") 数値入力
+    div
+      span.en(lang="en") Standard pixel
+      span.ja(lang="ja") 基準ピクセル
+      br
+      input#num1(type="number" step="0.001" value="0")
+    div
+      span.en(lang="en") Pixel to calculate
+      span.ja(lang="ja") 求めるピクセル
+      br
+      input#num2(type="number" step="0.001" value="0")
+    h2
+      span.en(lang="en") Calculation result
+      span.ja(lang="ja") 計算結果
+    div
+      input#result1(type="text" value="0" readonly="readonly")
+      |  %, vw, vh
+    div
+      input#result2(type="text" value="0" readonly="readonly")
+      |  em, rem
+    h2
+      span.en(lang="en") Width and height calculation results
+      span.ja(lang="ja") 幅と高さの計算結果
+    select#changeWidthHeight
+      option(value="w", selected="") Calclated Width
+      option(value="h") Calclated Height
+    span#inputNum1
+    p
+      img.en(src="img/image_size_en.png")
+      img.ja(src="img/image_size_ja.png")
+    #metallicMeansResult
+      h3
+        span.en(lang="en") Metallic means
+        span.ja(lang="ja") 貴金属比
+      div
+        span.en(lang="en") Golden ratio
+        span.ja(lang="ja") 黄金比
+        input#goldenRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span.en(lang="en") Silver ratio
+        span.ja(lang="ja") 白銀比
+        input#silverRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span.en(lang="en") Bronze ratio
+        span.ja(lang="ja") 青銅比
+        input#bronzeRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+    #aspectRatioResult
+      h3
+        span.en(lang="en") Aspect ratio
+        span.ja(lang="ja") アスペクト比
+      div
+        span 4:3
+        input#sdRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span 3:2
+        input#threeToTwoRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span.en(lang="en") L size
+        span.ja(lang="ja") L判
+        input#lSizeRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span 16:9
+        input#hdRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span 16:10
+        input#sixteenToTenRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span 21:9
+        input#twentyOneByNineRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+      div
+        span.en(lang="en")
+          | OGP image
+          br
+          | * Please produce with a width of 1200px and a height of 630px or more.
+        span.ja(lang="ja")
+          | OGPイメージ
+          br
+          | ※幅1200px、高さ630px以上で制作してください。
+        br
+        input#ogpImageRatio(type="text" value="0" readonly="readonly", size="10")
+        |  px
+    include _pageFooter
+    script(src=jsUrl+"web-calcAfter.js")

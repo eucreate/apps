@@ -1,0 +1,41 @@
+@import base
+
+h1
+  padding: .25em .5em
+  background-color: $baseColor
+  color: #fff
+  border-radius: 5px
+  border-bottom: none
+  font-size: (26 / $baseFontSize) + rem
+nav
+  margin-top: 1em
+  border-top: 2px solid $baseColor
+  ul
+    list-style: none
+    margin: 0
+    padding-left: 0
+    box-sizing: border-box
+    li
+      position: relative
+      border-bottom: 2px solid $baseColor
+      a
+        position: relative
+        display: block
+        padding: .75em 28px .75em 10px
+        color: $baseColor
+        font-size: (21 / $baseFontSize) + rem
+        text-decoration: none
+        &:after
+          content: ''
+          position: absolute
+          display: block
+          top: 0
+          bottom: 0
+          right: 10px
+          width: 15px
+          height: 15px
+          margin: auto
+          border-top: 4px solid $baseColor
+          border-right: 4px solid $baseColor
+          transform: rotate(45deg)
+        

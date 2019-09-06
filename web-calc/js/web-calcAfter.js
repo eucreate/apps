@@ -1,0 +1,21 @@
+var elemChangeWidthHeight = document.getElementById('changeWidthHeight');
+var elemNum1 = document.getElementById('num1');
+var elemNum2 = document.getElementById('num2');
+var elemInputNum1 = document.getElementById('inputNum1');
+var elemMetallicMeansResultDiv = document.querySelectorAll('#metallicMeansResult div');
+var elemMetallicMeansResultH3 = document.querySelectorAll('#metallicMeansResult h3');
+var elemAspectRatioResulttH3 = document.querySelectorAll('#aspectRatioResult h3');
+var elemGoldenRatio = document.getElementById('goldenRatio');
+var elemSilverRatio = document.getElementById('silverRatio');
+var elemBronzeRatio = document.getElementById('bronzeRatio');
+var elemSdRatio = document.getElementById('sdRatio');
+var elemThreeToTwoRatio = document.getElementById('threeToTwoRatio');
+var elemLSizeRatio = document.getElementById('lSizeRatio');
+var elemHdRatio = document.getElementById('hdRatio');
+var elemSixteenToTenRatio = document.getElementById('sixteenToTenRatio');
+var elemTwentyOneByNineRatio = document.getElementById('twentyOneByNineRatio');
+var elemOgpImageRatio = document.getElementById('ogpImageRatio');
+
+elemNum1.onchange = Calculation;
+elemNum2.onchange = Calculation;
+elemChangeWidthHeight.onchange = changeWidthHeight;

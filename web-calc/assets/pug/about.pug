@@ -1,0 +1,44 @@
+include _config.pug
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width")
+    title About me（私について） - #{siteName}
+    include _icon.pug
+    link(rel="stylesheet", href=cssUrl+"common.css")
+    link(rel="stylesheet", href=cssUrl+"about.css")
+    script(src=jsUrl+"common.js")
+  body
+    include _pageHeader.pug
+    h1
+      span.en(lang="en") About me
+      span.ja(lang="ja") 私について
+    p
+      span.en(lang="en")
+        | Types of companies: Self-employment
+        br
+        | Business name: EU-Create
+        br
+        | Representative name: Eiichi Uchibori
+        br
+        | Services: Web Designer, Web Programmer, Digital Artist (Music)
+      span.ja(lang="ja")
+        | 企業の種類：自営業
+        br
+        | 屋号：EU-Create（イーユー・クリエイト）
+        br
+        | 代表者名：内堀 英一
+        br
+        | 事業内容：Webデザイナー、Webプログラマー、デジタルアーティスト
+    p
+      span.en(lang="en")
+        | Visit my 
+        a(href="https://www.eucreate.net/", target="_blank") website
+        |  for details.
+      span.ja(lang="ja")
+        | 詳細は私の
+        a(href="https://www.eu-create.net/", target="_blank") ウェブサイト
+        | をご覧ください。
+    include _pageFooter

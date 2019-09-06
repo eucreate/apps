@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Website Calculation Tool（ウェブサイト計算ツール） - Web Calculation Tool（ウェブ計算ツール）</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon180.png">
+    <link rel="icon" type="image/png" href="img/icon256.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/web-calc.css">
+    <script src="js/common.js"></script>
+    <script src="js/web-calc.js"></script>
+  </head>
+  <body>
+    <header><a class="back" href="index.html"><span class="en" lang="en">Back</span><span class="ja" lang="ja">戻る</span></a>
+      <select id="languageSelect">
+        <option value="en" selected="">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </header>
+    <h1><span class="en" lang="en">Website Calculation Tool</span><span class="ja" lang="ja">ウェブサイト計算ツール</span></h1>
+    <p><span class="en" lang="en">A calculation tool useful for web design and website creation.</span><span class="ja" lang="ja">ウェブデザインやwebサイト制作に役立つ計算ツールです。</span></p>
+    <p><span class="en" lang="en">The metallic means and aspect ratio is calculated based on the input value entered in "Standard pixel".<br>"%, vw, vh, em, rem" is calculated by inputting the standard pixel and the pixel to calculate.</span><span class="ja" lang="ja">貴金属比やアスペクト比は入力値が「基準ピクセル」に入力した値で計算されます。<br>「%, vw, vh, em, rem」の計算は、基準ピクセルと求めるピクセルを入力することで計算されます。</span></p>
+    <h2><span class="en" lang="en">Numeric input</span><span class="ja" lang="ja">数値入力</span></h2>
+    <div><span class="en" lang="en">Standard pixel</span><span class="ja" lang="ja">基準ピクセル</span><br>
+      <input id="num1" type="number" step="0.001" value="0">
+    </div>
+    <div><span class="en" lang="en">Pixel to calculate</span><span class="ja" lang="ja">求めるピクセル</span><br>
+      <input id="num2" type="number" step="0.001" value="0">
+    </div>
+    <h2><span class="en" lang="en">Calculation result</span><span class="ja" lang="ja">計算結果</span></h2>
+    <div>
+      <input id="result1" type="text" value="0" readonly="readonly"> %, vw, vh
+    </div>
+    <div>
+      <input id="result2" type="text" value="0" readonly="readonly"> em, rem
+    </div>
+    <h2><span class="en" lang="en">Width and height calculation results</span><span class="ja" lang="ja">幅と高さの計算結果</span></h2>
+    <select id="changeWidthHeight">
+      <option value="w" selected="">Calclated Width</option>
+      <option value="h">Calclated Height</option>
+    </select><span id="inputNum1"></span>
+    <p><img class="en" src="img/image_size_en.png"><img class="ja" src="img/image_size_ja.png"></p>
+    <div id="metallicMeansResult">
+      <h3><span class="en" lang="en">Metallic means</span><span class="ja" lang="ja">貴金属比</span></h3>
+      <div><span class="en" lang="en">Golden ratio</span><span class="ja" lang="ja">黄金比</span>
+        <input id="goldenRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span class="en" lang="en">Silver ratio</span><span class="ja" lang="ja">白銀比</span>
+        <input id="silverRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span class="en" lang="en">Bronze ratio</span><span class="ja" lang="ja">青銅比</span>
+        <input id="bronzeRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+    </div>
+    <div id="aspectRatioResult">
+      <h3><span class="en" lang="en">Aspect ratio</span><span class="ja" lang="ja">アスペクト比</span></h3>
+      <div><span>4:3</span>
+        <input id="sdRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span>3:2</span>
+        <input id="threeToTwoRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span class="en" lang="en">L size</span><span class="ja" lang="ja">L判</span>
+        <input id="lSizeRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span>16:9</span>
+        <input id="hdRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span>16:10</span>
+        <input id="sixteenToTenRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span>21:9</span>
+        <input id="twentyOneByNineRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+      <div><span class="en" lang="en">OGP image<br>* Please produce with a width of 1200px and a height of 630px or more.</span><span class="ja" lang="ja">OGPイメージ<br>※幅1200px、高さ630px以上で制作してください。</span><br>
+        <input id="ogpImageRatio" type="text" value="0" readonly="readonly" size="10"> px
+      </div>
+    </div>
+    <p id="copyright"><small>2019 &copy; EU-Create. All rights reserved.</small></p>
+    <script src="js/commonAfter.js"></script>
+    <script src="js/web-calcAfter.js"></script>
+  </body>
+</html>
