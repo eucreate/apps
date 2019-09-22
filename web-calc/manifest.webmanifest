@@ -1,0 +1,22 @@
+{
+  "dir": "ltr",
+  "lang" : "English",
+  "name" : "Web Calculation Tool",
+  "scope" : "/apps/web-calc/",
+  "display" : "standalone",
+  "start_url" : "./?utm_source=pwa",
+  "short_name" : "Web Calculation Tool",
+  "description" : "A calculation tool useful for web design and website creation.",
+  "orientation" : "any",
+  "background_color" : "#004d84",
+  "icons" : [
+    {
+      "src": "./img/icon256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "./img/icon192.png",
+      "sizes": "192x192"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+include _config.pug
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width")
+    title About Website Calclation Tool（ウェブサイト計算ツールについて） - #{siteName}
+    include _icon.pug
+    link(rel="stylesheet", href=cssUrl+"common.css")
+    link(rel="stylesheet", href=cssUrl+"about-web-calc.css")
+    script(src=jsUrl+"common.js")
+  body
+    include _pageHeader.pug
+    h1
+      span.en(lang="en") About Website Calclation Tool
+      span.ja(lang="ja") ウェブサイト計算ツールについて
+    p
+      span.en(lang="en") You can calculate "%, vw, vh, em, rem", metallic means ratio and aspect ratio.
+      span.ja(lang="ja") 「%, vw, vh, em, rem」の計算、貴金属比やアスペクト比の計算ができます。
+    h2
+      span.en(lang="en") Font size calculation
+      span.ja(lang="ja") フォントサイズの計算
+    ul
+      li
+        span.en(lang="en")
+          | "%, em" is relative to the parent element&#039;s font size.
+          br
+          | "rem" is relative to the root element (html), not the parent element.
+          br
+          | The value output to "em, rem" can also be used to calculate the line-height property.
+        span.ja(lang="ja")
+          | 「%、em」は親要素のフォントサイズからの相対値です。
+          br
+          | 「rem」は親要素ではなくルート要素（html）に対して相対的です。
+          br
+          | 「em、rem」に出力された値はline-heightプロパティの計算にも利用できます。
+      li
+        span.en(lang="en")
+          | "vw (viewport width)" is relative to the screen width (including the scroll bar).
+          br
+          | "vh (viewport height)" is relative to the screen height (including the scroll bar).
+          br
+          | This is useful when you want to display the same number of characters on any device on a smartphone.
+          br
+          | Note: Set up media queries appropriately.
+        span.ja(lang="ja")
+          | 「vw（ビューポートの幅）」は画面の幅（スクロールバー含む）に対する相対値です。
+          br
+          | 「vh（ビューポートの高さ）」は画面の高さ（スクロールバー含む）に対する相対値です。
+          br
+          | これは、スマートフォン上の任意のデバイスで同じ文字数を表示する場合に便利です。
+          br
+          | 注意：メディアクエリの設定は適切に行ってください。
+    h2
+      span.en(lang="en") The metallic means and aspect ratio
+      span.ja(lang="ja") 貴金属平均とアスペクト比
+    p
+      span.en(lang="en")
+        | The calculation result is rounded down to four decimal places.
+        br
+        | When converting to an integer, please follow the respective policy.
+      span.ja(lang="ja")
+        | 計算結果は小数点4桁切り捨てです。
+        br
+        | 整数に変換する時には、それぞれの方針に従って処理してください。
+    p
+      span.en(lang="en") The metallic means (metallic ratio) is the ratio that humans have felt beautiful since ancient times.
+      span.ja(lang="ja") 貴金属平均（貴金属比）は、古くから人間が美しいと感じる比率です。
+    h3
+      span.en(lang="en") The metallic means (metallic ratio)
+      span.ja(lang="ja") 貴金属平均（貴金属比）
+    ul
+      li
+        span.en(lang="en")
+          | The golden ratio is the ratio that humans feel most beautiful.
+          br
+          | It&#039;s used for historical buildings, an art-object, business cards, and company logos.
+        span.ja(lang="ja")
+          | 黄金比は人間が最も美しいと感じる比率です。
+          br
+          | 歴史的建造物や美術品、名刺、各社ロゴマークに使用されています。
+      li
+        span.en(lang="en")
+          | The silver ratio is a ratio that has been beautiful in Japan since ancient times.
+          br
+          | Used for paper standards (A series and B series), Japanese anime characters, and ancient Japanese buildings.
+        span.ja(lang="ja")
+          | 白銀比は日本で古くから美しいと感じる比率です。
+          br
+          | 用紙の規格（A判、B判）、日本のアニメキャラクター、日本古来の建造物に使用されています。
+      li
+        span.en(lang="en")
+          | The bronze ratio is one of the metal ratios, but unfortunately it isn&#039;t used much.
+          br
+          | It might be good to use it for the main image of the homepage.
+        span.ja(lang="ja")
+          | 青銅比は貴金属比の一つですが、残念ながらあまり使われていません。
+          br
+          | トップページのメイン画像に使用するのもいいかもしれません。
+    h3
+      span.en(lang="en") Aspect ratio
+      span.ja(lang="ja") アスペクト比
+    ul
+      li
+        span.en(lang="en")
+          | L size.
+          br
+          | L size is the standard size for Japanese photos.
+        span.ja(lang="ja")
+          | L判
+          br
+          | L判は日本の写真の標準サイズです。
+    include _pageFooter

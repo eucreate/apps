@@ -7,6 +7,7 @@ html
     meta(name="viewport" content="width=device-width")
     title #{siteName}
     include _icon.pug
+    include _pwa.pug
     link(rel="stylesheet", href=cssUrl+"common.css")
     link(rel="stylesheet", href=cssUrl+"index.css")
     script(src=jsUrl+"common.js")
@@ -24,6 +25,10 @@ html
             span.en(lang="en") Website Calculation Tool
             span.ja(lang="ja") ウェブサイト計算ツール
         li
+          a(href="about-web-calc.html")
+            span.en(lang="en") About Website Calculation Tool
+            span.ja(lang="ja") ウェブサイト計算ツールについて
+        li
           a(href="about.html")
             span.en(lang="en") About me
             span.ja(lang="ja") 私について
@@ -36,4 +41,7 @@ html
         a(href="https://apps.apple.com/jp/app/%E3%82%A6%E3%82%A7%E3%83%96%E8%A8%88%E7%AE%97%E3%83%84%E3%83%BC%E3%83%AB/id1478851396?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-05&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:50px;")
         a(href="https://play.google.com/store/apps/details?id=net.eucreate.webcalclationtool&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1")
           img(alt="Google Play で手に入れよう" src="https://play.google.com/intl/ja_jp/badges/images/generic/ja_badge_web_generic.png" height="60")
+    p
+      span.en(lang="en") This page supports PWA.
+      span.ja(lang="ja") このページはPWAに対応しています。
     include _pageFooter
