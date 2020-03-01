@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Convert Units（単位変換） - Web Calculation Tool（ウェブ計算ツール）</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon180.png">
+    <link rel="icon" type="image/png" href="img/icon256.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/convert-units.css">
+    <script src="js/common.js"></script>
+    <script src="js/convert-units.js"></script>
+  </head>
+  <body>
+    <header><a class="back" href="index.html"><span class="en" lang="en">Back</span><span class="ja" lang="ja">戻る</span></a>
+      <select id="languageSelect">
+        <option value="en" selected="">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </header>
+    <h1><span class="en" lang="en">Convert Units</span><span class="ja" lang="ja">単位変換</span></h1>
+    <p><span class="en" lang="en">Enter the value of the standard unit you want to calculate.<br>Click or tap the button of the unit to be converted and calculate.</span><span class="ja" lang="ja">計算したい基準となる単位の値を入力します。<br>変換する単位のボタンを押して計算します。</span></p>
+    <h2><span class="en" lang="en">Temperature</span><span class="ja" lang="ja">温度</span></h2>
+    <input id="celsius" type="number" step="0.01" value="0">&nbsp;℃<br>
+    <input id="fahrenheit" type="number" step="0.01" value="0">&nbsp;℉
+    <div>
+      <input id="changeFahrenheit" type="button" value="℃ → ℉">
+      <input id="changeCelsius" type="button" value="℉ → ℃">
+    </div>
+    <h2><span class="en" lang="en">Length</span><span class="ja" lang="ja">長さ</span></h2>
+    <input id="centimeters" type="number" value="0">&nbsp;cm<br>
+    <input id="inch" type="number" value="0">&nbsp;inch&nbsp;
+    <input id="feet" type="number" value="0">&nbsp;feet
+    <div>
+      <input id="changeInch" type="button" value="cm → inch, feet">
+      <input id="changeCentimeters" type="button" value="inch → cm, feet">
+      <input id="changeFeet" type="button" value="feet → cm, inch">
+    </div>
+    <h3><span class="en" lang="en">Conversion of meters, yards and feet</span><span class="ja" lang="ja">mとヤードとフィートの変換</span></h3>
+    <input id="meter" type="number" value="0">&nbsp;m<br>
+    <input id="yard" type="number" value="0">&nbsp;yard&nbsp;
+    <input id="feet2" type="number" value="0">&nbsp;feet
+    <div>
+      <input id="changeYard" type="button" value="m → yard, feet">
+      <input id="changeMeter" type="button" value="yard → m, feet">
+      <input id="ChangeFeet2" type="button" value="feet → m, yard">
+    </div>
+    <h3><span class="en" lang="en">Conversion of meters and miles</span><span class="ja" lang="ja">kmとマイルの変換</span></h3>
+    <input id="kilometer" type="number" value="0">&nbsp;km<br>
+    <input id="mile" type="number" value="0">&nbsp;mile
+    <div>
+      <input id="changeMile" type="button" value="km → mile">
+      <input id="changeKilometer" type="button" value="mile → km">
+    </div>
+    <h2><span class="en" lang="en">Weight</span><span class="ja" lang="ja">重量</span></h2>
+    <input id="kg" type="number" value="0">&nbsp;kg<br>
+    <input id="pound" type="number" value="0">&nbsp;pound
+    <div>
+      <input id="changePound" type="button" value="kg → lb">
+      <input id="changeKg" type="button" value="lb → kg">
+    </div>
+    <h2><span class="en" lang="en">Volume</span><span class="ja" lang="ja">体積</span></h2>
+    <input id="liters" type="number" value="0">&nbsp;L<br>
+    <input id="USGallons" type="number" value="0">&nbsp;US Gallons&nbsp;
+    <input id="UKGallons" type="number" value="0">&nbsp;UK Gallons
+    <div>
+      <input id="changeGallons" type="button" value="L → gal">
+      <input id="changeLiters" type="button" value="gal(US) → L, gal(UK)">
+      <input id="changeLitersUSG" type="button" value="gal(UK) → L, gal(US)">
+    </div>
+    <h2><span class="en" lang="en">Speed</span><span class="ja" lang="ja">速度</span></h2>
+    <input id="mps" type="number" value="0">&nbsp;m/s<br>
+    <input id="kmph" type="number" value="0">&nbsp;kmph
+    <div>
+      <input id="changeKmph" type="button" value="m/s → kmph">
+      <input id="changeMps" type="button" value="kmph → m/s">
+    </div>
+    <p id="copyright"><small>2019 &copy; EU-Create. All rights reserved.</small></p>
+  </body>
+</html>

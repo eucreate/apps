@@ -1,0 +1,29 @@
+header select {
+  position: relative;
+  top: 3px;
+}
+
+input[type=number] {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+input[type=button] {
+  font-size: 1rem;
+  padding: 0.5em;
+}
+
+@media screen and (max-width: 418px) {
+  #changeYard {
+    margin-bottom: 0.5em;
+  }
+}
+@media screen and (max-width: 440px) {
+  #changeInch {
+    margin-bottom: 0.5em;
+  }
+}
+@media screen and (max-width: 461px) {
+  #changeGallons {
+    margin-bottom: 0.5em;
+  }
+}

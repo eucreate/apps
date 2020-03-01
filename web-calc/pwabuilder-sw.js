@@ -5,19 +5,20 @@ const precacheFiles = [
   /* Add an array of files to precache for your app */
   'index.html',
   'web-calc.html',
+  'convert-units.html',
   'about.html',
   'about-web-calc.html',
   'css/about.css',
   'css/common.css',
   'css/index.css',
   'css/web-calc.css',
+  'css/convert-units.css',
   'css/about-web-calc.css',
   'img/image_size_en.png',
   'img/image_size_ja.png',
   'js/common.js',
-  'js/commonAfter.js',
   'js/web-calc.js',
-  'js/web-calcAfter.js'
+  'js/convert-units.js'
 ];
 
 self.addEventListener("install", function (event) {
