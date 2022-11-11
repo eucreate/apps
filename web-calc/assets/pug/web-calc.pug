@@ -5,7 +5,7 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
-    title Website Calculation Tool（ウェブサイト計算ツール） - #{siteName}
+    title Website Calculation Tool ウェブサイト計算ツール 网站的计算工具 - #{siteName}
     include _icon.pug
     link(rel="stylesheet", href=cssUrl+"common.css")
     link(rel="stylesheet", href=cssUrl+"web-calc.css")
@@ -16,33 +16,44 @@ html
     h1
       span.en(lang="en") Website Calculation Tool
       span.ja(lang="ja") ウェブサイト計算ツール
+      span.cn(lang="zh-cn") 网站的计算工具
     p
       span.en(lang="en") A calculation tool useful for web design and website creation.
       span.ja(lang="ja") ウェブデザインやwebサイト制作に役立つ計算ツールです。
+      span.cn(lang="zh-cn") 一个用于网页设计和网站开发的计算工具。
     p
       span.en(lang="en")
         | The metallic means and aspect ratio is calculated based on the input value entered in "Standard pixel".
         br
-        | "%, vw, vh, em, rem" is calculated by inputting the standard pixel and the pixel to calculate.
+        | Calculation of "%, vw, vh, em, rem" is to input "Standard Pixel" and "Wanted Pixel".
       span.ja(lang="ja") 貴金属比やアスペクト比は入力値が「基準ピクセル」に入力した値で計算されます。
         br
         | 「%, vw, vh, em, rem」の計算は、基準ピクセルと求めるピクセルを入力することで計算されます。
+      span.cn(lang="zh-cn") 金属手段和长宽比是根据 "标准像素 "中输入的数值计算的。
+        br
+        | 计算"%, vw, vh, em, rem "是要输入 "标准像素 "和 "想要的像素"。
     h2
       span.en(lang="en") Numeric input
       span.ja(lang="ja") 数値入力
+      span.cn(lang="zh-cn") 数值输入
     div
       span.en(lang="en") Standard pixel
       span.ja(lang="ja") 基準ピクセル
+      span.cn(lang="zh-cn") 标准像素
       br
+      //-input#num1(type="number" value="0" onchange="Calculation()")
       input#num1(type="number" step="0.001" value="0")
     div
-      span.en(lang="en") Pixel to calculate
+      span.en(lang="en") Wanted Pixel
       span.ja(lang="ja") 求めるピクセル
+      span.cn(lang="zh-cn") 想要的像素
       br
+      //-input#num2(type="number" step="0.001" value="0" onchange="Calculation()")
       input#num2(type="number" step="0.001" value="0")
     h2
       span.en(lang="en") Calculation result
       span.ja(lang="ja") 計算結果
+      span.cn(lang="zh-cn") 计算结果
     div
       input#result1(type="text" value="0" readonly="readonly")
       |  %, vw, vh
@@ -52,36 +63,43 @@ html
     h2
       span.en(lang="en") Width and height calculation results
       span.ja(lang="ja") 幅と高さの計算結果
+      span.cn(lang="zh-cn") 宽和高的计算结果
     select#changeWidthHeight
-      option(value="w", selected="") Calclated Width
-      option(value="h") Calclated Height
+      option(value="w", selected="") Calculated Width
+      option(value="h") Calculated Height
     span#inputNum1
     p
       img.en(src="img/image_size_en.png")
       img.ja(src="img/image_size_ja.png")
+      img.cn(src="img/image_size_cn.png")
     #metallicMeansResult
       h3
         span.en(lang="en") Metallic means
         span.ja(lang="ja") 貴金属比
+        span.cn(lang="zh-cn") 貴金屬比例
       div
         span.en(lang="en") Golden ratio
         span.ja(lang="ja") 黄金比
+        span.cn(lang="zh-cn") 黄金比例
         input#goldenRatio(type="text" value="0" readonly="readonly", size="10")
         |  px
       div
         span.en(lang="en") Silver ratio
         span.ja(lang="ja") 白銀比
+        span.cn(lang="zh-cn") 白銀比例
         input#silverRatio(type="text" value="0" readonly="readonly", size="10")
         |  px
       div
         span.en(lang="en") Bronze ratio
         span.ja(lang="ja") 青銅比
+        span.cn(lang="zh-cn") 青铜比率
         input#bronzeRatio(type="text" value="0" readonly="readonly", size="10")
         |  px
     #aspectRatioResult
       h3
         span.en(lang="en") Aspect ratio
         span.ja(lang="ja") アスペクト比
+        span.cn(lang="zh-cn") 纵横比
       div
         span 4:3
         input#sdRatio(type="text" value="0" readonly="readonly", size="10")
@@ -93,6 +111,7 @@ html
       div
         span.en(lang="en") L size
         span.ja(lang="ja") L判
+        span.cn(lang="zh-cn") L尺寸
         input#lSizeRatio(type="text" value="0" readonly="readonly", size="10")
         |  px
       div
@@ -116,6 +135,10 @@ html
           | OGPイメージ
           br
           | ※幅1200px、高さ630px以上で制作してください。
+        span.cn(lang="zh-cn")
+          | OGP图像
+          br
+          | * 请以1200px的宽度和630px以上的高度制作。
         br
         input#ogpImageRatio(type="text" value="0" readonly="readonly", size="10")
         |  px

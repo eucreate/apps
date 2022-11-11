@@ -1,23 +1,23 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
-  var elemCelsius = document.getElementById('celsius');
-  var elemFahrenheit = document.getElementById('fahrenheit');
-  var elemCentimeters = document.getElementById('centimeters');
-  var elemInch = document.getElementById('inch');
-  var elemFeet = document.getElementById('feet');
-  var elemMeter = document.getElementById('meter');
-  var elemYard = document.getElementById('yard');
-  var elemFeet2 = document.getElementById('feet2');
-  var elemKilometer = document.getElementById('kilometer');
-  var elemMile = document.getElementById('mile');
-  var elemKg = document.getElementById('kg');
-  var elemPound = document.getElementById('pound');
-  var elemLiters = document.getElementById('liters');
-  var elemUSGallons = document.getElementById('USGallons');
-  var elemUKGallons = document.getElementById('UKGallons');
-  var elemMps = document.getElementById('mps');
-  var elemKmph = document.getElementById('kmph');
+  const elemCelsius = document.getElementById('celsius');
+  const elemFahrenheit = document.getElementById('fahrenheit');
+  const elemCentimeters = document.getElementById('centimeters');
+  const elemInch = document.getElementById('inch');
+  const elemFeet = document.getElementById('feet');
+  const elemMeter = document.getElementById('meter');
+  const elemYard = document.getElementById('yard');
+  const elemFeet2 = document.getElementById('feet2');
+  const elemKilometer = document.getElementById('kilometer');
+  const elemMile = document.getElementById('mile');
+  const elemKg = document.getElementById('kg');
+  const elemPound = document.getElementById('pound');
+  const elemLiters = document.getElementById('liters');
+  const elemUSGallons = document.getElementById('USGallons');
+  const elemUKGallons = document.getElementById('UKGallons');
+  const elemMps = document.getElementById('mps');
+  const elemKmph = document.getElementById('kmph');
   document.getElementById('changeFahrenheit').addEventListener('click', function () {
     Calculation('fahrenheit');
   }, false);
@@ -69,27 +69,28 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('changeKmph').addEventListener('click', function () {
     Calculation('kmph');
   }, false);
-
+  document.getElementById('btnHReload').addEventListener('click', function () {
+    window.location.reload(true);
+  }, false);
   function Calculation(type) {
-    var celsius = parseFloat(elemCelsius.value);
-    var fahrenheit = parseFloat(elemFahrenheit.value);
-    var centimeters = parseFloat(elemCentimeters.value);
-    var inch = parseFloat(elemInch.value);
-    var feet = parseFloat(elemFeet.value);
-    var meter = parseFloat(elemMeter.value);
-    var yard = parseFloat(elemYard.value);
-    var feet2 = parseFloat(elemFeet2.value);
-    var kilometer = parseFloat(elemKilometer.value);
-    var mile = parseFloat(elemMile.value);
-    var kg = parseFloat(elemKg.value);
-    var pound = parseFloat(elemPound.value);
-    var liters = parseFloat(elemLiters.value);
-    var USGallons = parseFloat(elemUSGallons.value);
-    var UKGallons = parseFloat(elemUKGallons.value);
-    var mps = parseFloat(elemMps.value);
-    var kmph = parseFloat(elemKmph.value);
-    var fahrenheitResult, celsiusResult, inchResult, feetResult, cmResult, yardResult, mResult, feet2Result, kilometerResult, mileResult, kgResult, poundResult, litersResult, USGallonsResult, UKGallonsResult, mpsResult, kmpsResult;
-
+    const celsius = parseFloat(elemCelsius.value);
+    const fahrenheit = parseFloat(elemFahrenheit.value);
+    const centimeters = parseFloat(elemCentimeters.value);
+    const inch = parseFloat(elemInch.value);
+    const feet = parseFloat(elemFeet.value);
+    const meter = parseFloat(elemMeter.value);
+    const yard = parseFloat(elemYard.value);
+    const feet2 = parseFloat(elemFeet2.value);
+    const kilometer = parseFloat(elemKilometer.value);
+    const mile = parseFloat(elemMile.value);
+    const kg = parseFloat(elemKg.value);
+    const pound = parseFloat(elemPound.value);
+    const liters = parseFloat(elemLiters.value);
+    const USGallons = parseFloat(elemUSGallons.value);
+    const UKGallons = parseFloat(elemUKGallons.value);
+    const mps = parseFloat(elemMps.value);
+    const kmph = parseFloat(elemKmph.value);
+    let fahrenheitResult, celsiusResult, inchResult, feetResult, cmResult, yardResult, mResult, feet2Result, kilometerResult, mileResult, kgResult, poundResult, litersResult, USGallonsResult, UKGallonsResult, mpsResult, kmpsResult;
     if (type === "celsius") {
       celsiusResult = (fahrenheit - 32) / 1.8;
       elemCelsius.value = numDP(celsiusResult, 2, 'round');
@@ -159,6 +160,125 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (type === "kmph") {
       kmpsResult = mps * 3.6;
       elemKmph.value = kmpsResult;
+    }
+  }
+  function getRate() {
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+      if (req.readyState == 4 && req.status == 200) {
+        lStorage.setItem('rate', req.responseText);
+        lStorage.setItem('rateDate', Date.now());
+      }
+    };
+    req.open("GET", "https://www,eu-create.net/apps/web-calc/assets/php/getrate.php");
+    req.send(null);
+  }
+  getRate();
+  let rate = JSON.parse(lStorage.getItem('rate'));
+  let rateDate = new Date(parseInt(lStorage.getItem('rateDate')));
+  document.getElementById('textCurrencyDate').textContent = rateDate.toLocaleString();
+  const elemJPY = document.getElementById('JPY');
+  const elemUSD = document.getElementById('USD');
+  const elemEUR = document.getElementById('EUR');
+  const elemGBP = document.getElementById('GBP');
+  const elemAUD = document.getElementById('AUD');
+  const elemCAD = document.getElementById("CAD");
+  document.getElementById('changeJPY').addEventListener('click', function () {
+    calcRate('jpy');
+  }, false);
+  document.getElementById('changeUSD').addEventListener('click', function () {
+    calcRate('usd');
+  }, false);
+  document.getElementById('changeEUR').addEventListener('click', function () {
+    calcRate('eur');
+  }, false);
+  document.getElementById('changeGBP').addEventListener('click', function () {
+    calcRate('gbp');
+  }, false);
+  document.getElementById('changeAUD').addEventListener('click', function () {
+    calcRate('aud');
+  }, false);
+  document.getElementById('changeCAD').addEventListener('click', function () {
+    calcRate('cad');
+  }, false);
+  function calcRate(type) {
+    let JPY = parseInt(elemJPY.value);
+    let USD = parseFloat(elemUSD.value);
+    let EUR = parseFloat(elemEUR.value);
+    let GBP = parseFloat(elemGBP.value);
+    let AUD = parseFloat(elemAUD.value);
+    let CAD = parseFloat(elemCAD.value);
+    let resultJPY, resultUSD, resultEUR, resultGBP, resultAUD, resultCAD;
+    if (type === "jpy") {
+      resultUSD = JPY / parseFloat(rate.quotes[20].ask);
+      elemUSD.value = resultUSD;
+      resultEUR = JPY / parseFloat(rate.quotes[16].ask);
+      elemEUR.value = resultEUR;
+      resultGBP = JPY / parseFloat(rate.quotes[23].ask);
+      elemGBP.value = resultGBP;
+      resultAUD = JPY / parseFloat(rate.quotes[3].ask);
+      elemAUD.value = resultAUD;
+      resultCAD = JPY / parseFloat(rate.quotes[1].ask);
+      elemCAD.value = resultCAD;
+    } else if (type === "usd") {
+      resultJPY = USD * parseFloat(rate.quotes[20].ask);
+      elemJPY.value = resultJPY;
+      resultEUR = USD / parseFloat(rate.quotes[6].ask);
+      elemEUR.value = resultEUR;
+      resultGBP = USD / parseFloat(rate.quotes[10].ask);
+      elemGBP.value = resultGBP;
+      resultAUD = USD / parseFloat(rate.quotes[14].ask);
+      elemAUD.value = resultAUD;
+      resultCAD = USD * parseFloat(rate.quotes[8].ask);
+      elemCAD.value = resultCAD;
+    } else if (type === "eur") {
+      resultJPY = EUR * parseFloat(rate.quotes[16].ask);
+      elemJPY.value = resultJPY;
+      resultUSD = EUR * parseFloat(rate.quotes[6].ask);
+      elemUSD.value = resultUSD;
+      resultGBP = EUR * parseFloat(rate.quotes[9].ask);
+      elemGBP.value = resultGBP;
+      resultAUD = EUR * parseFloat(rate.quotes[21].ask);
+      elemAUD.value = resultAUD;
+      resultCAD = EUR * parseFloat(rate.quotes[5].ask);
+      elemCAD.value = resultCAD;
+    } else if (type === "gbp") {
+      resultJPY = GBP * parseFloat(rate.quotes[23].ask);
+      elemJPY.value = resultJPY;
+      resultUSD = GBP * parseFloat(rate.quotes[10].ask);
+      elemUSD.value = resultUSD;
+      resultEUR = GBP / parseFloat(rate.quotes[9].ask);
+      elemEUR.value = resultEUR;
+      resultAUD = GBP * parseFloat(rate.quotes[2].ask);
+      elemAUD.value = resultAUD;
+      resultCAD = GBP * parseFloat(rate.quotes[10].ask);
+      resultCAD = resultCAD * parseFloat(rate.quotes[8].ask);
+      elemCAD.value = resultCAD;
+    } else if (type === "aud") {
+      resultJPY = AUD * parseFloat(rate.quotes[3].ask);
+      elemJPY.value = resultJPY;
+      resultUSD = AUD * parseFloat(rate.quotes[14].ask);
+      elemUSD.value = resultUSD;
+      resultEUR = AUD / parseFloat(rate.quotes[21].ask);
+      elemEUR.value = resultEUR;
+      resultGBP = AUD / parseFloat(rate.quotes[2].ask);
+      elemGBP.value = resultGBP;
+      resultCAD = AUD * parseFloat(rate.quotes[14].ask);
+      resultCAD = resultCAD * parseFloat(rate.quotes[8].ask);
+      elemCAD.value = resultCAD;
+    } else if (type === "cad") {
+      resultJPY = CAD * parseFloat(rate.quotes[1].ask);
+      elemJPY.value = resultJPY;
+      resultUSD = CAD / parseFloat(rate.quotes[8].ask);
+      elemUSD.value = resultUSD;
+      resultEUR = CAD / parseFloat(rate.quotes[5].ask);
+      elemEUR.value = resultEUR;
+      resultGBP = CAD / parseFloat(rate.quotes[10].ask);
+      resultGBP = resultGBP / parseFloat(rate.quotes[8].ask);
+      elemGBP.value = resultGBP;
+      resultAUD = CAD / parseFloat(rate.quotes[14].ask);
+      resultAUD = resultAUD / parseFloat(rate.quotes[8].ask);
+      elemAUD.value = resultAUD;
     }
   }
 }, false);

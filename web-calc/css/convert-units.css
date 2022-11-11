@@ -12,6 +12,16 @@ input[type=button] {
   padding: 0.5em;
 }
 
+#btnCurrency input[type=button] {
+  margin-bottom: 0.5em;
+}
+
+#liters,
+#USGallons,
+#UKGallons {
+  width: 180px;
+}
+
 @media screen and (max-width: 418px) {
   #changeYard {
     margin-bottom: 0.5em;

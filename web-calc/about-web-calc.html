@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>About Website Calclation Tool（ウェブサイト計算ツールについて） - Web Calculation Tool（ウェブ計算ツール）</title>
+    <title>About Website Calclation Tool ウェブサイト計算ツールについて 关于网站计算工具 - Web Calculation Tool ウェブ計算ツール 网络计算工具</title>
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/icon180.png">
     <link rel="icon" type="image/png" href="img/icon256.png">
@@ -12,31 +12,32 @@
     <script src="js/common.js"></script>
   </head>
   <body>
-    <header><a class="back" href="index.html"><span class="en" lang="en">Back</span><span class="ja" lang="ja">戻る</span></a>
+    <header><a class="back" href="index.html"><span class="en" lang="en">Back</span><span class="ja" lang="ja">戻る</span><span class="cn" lang="zh-cn">返回</span></a>
       <select id="languageSelect">
         <option value="en" selected="">English</option>
         <option value="ja">日本語</option>
+        <option value="cn">中文</option>
       </select>
     </header>
-    <h1><span class="en" lang="en">About Website Calclation Tool</span><span class="ja" lang="ja">ウェブサイト計算ツールについて</span></h1>
-    <p><span class="en" lang="en">You can calculate "%, vw, vh, em, rem", metallic means ratio and aspect ratio.</span><span class="ja" lang="ja">「%, vw, vh, em, rem」の計算、貴金属比やアスペクト比の計算ができます。</span></p>
-    <h2><span class="en" lang="en">Font size calculation</span><span class="ja" lang="ja">フォントサイズの計算</span></h2>
+    <h1><span class="en" lang="en">About Website Calclation Tool</span><span class="ja" lang="ja">ウェブサイト計算ツールについて</span><span class="cn" lang="zh-cn">关于网站计算工具</span></h1>
+    <p><span class="en" lang="en">It can calculate "%, vw, vh, em, rem", metallic mean and aspect ratio etc.</span><span class="ja" lang="ja">「%, vw, vh, em, rem」の計算、貴金属比やアスペクト比の計算ができます。</span><span class="cn" lang="zh-cn">它可以计算"%，vw，vh，em，rem"，貴金屬比例和长宽比等。</span></p>
+    <h2><span class="en" lang="en">Font size calculation</span><span class="ja" lang="ja">フォントサイズの計算</span><span class="cn" lang="zh-cn">字体大小计算</span></h2>
     <ul>
-      <li><span class="en" lang="en">"%, em" is relative to the parent element&#039;s font size.<br>"rem" is relative to the root element (html), not the parent element.<br>The value output to "em, rem" can also be used to calculate the line-height property.</span><span class="ja" lang="ja">「%、em」は親要素のフォントサイズからの相対値です。<br>「rem」は親要素ではなくルート要素（html）に対して相対的です。<br>「em、rem」に出力された値はline-heightプロパティの計算にも利用できます。</span></li>
-      <li><span class="en" lang="en">"vw (viewport width)" is relative to the screen width (including the scroll bar).<br>"vh (viewport height)" is relative to the screen height (including the scroll bar).<br>This is useful when you want to display the same number of characters on any device on a smartphone.<br>Note: Set up media queries appropriately.</span><span class="ja" lang="ja">「vw（ビューポートの幅）」は画面の幅（スクロールバー含む）に対する相対値です。<br>「vh（ビューポートの高さ）」は画面の高さ（スクロールバー含む）に対する相対値です。<br>これは、スマートフォン上の任意のデバイスで同じ文字数を表示する場合に便利です。<br>注意：メディアクエリの設定は適切に行ってください。</span></li>
+      <li><span class="en" lang="en">"%, em" is relative value from the font size of the parent element.<br>"rem" is relative to the root element (html), not the parent element.<br>The values output in "em, rem" can be used to calculate the line-height property.</span><span class="ja" lang="ja">「%、em」は親要素のフォントサイズからの相対値です。<br>「rem」は親要素ではなくルート要素（html）に対して相対的です。<br>「em、rem」に出力された値はline-heightプロパティの計算にも利用できます。</span><span class="cn" lang="zh-cn">"%, em "是来自父元素字体大小的相对值。<br>"rem "是相对于根元素（html），而不是父元素。<br>在 "em, rem "中输出的值可用于计算行高属性。</span></li>
+      <li><span class="en" lang="en">The "vw (viewport width)" is a relative value to the screen width (including scroll bars).<br>The "vh (viewport height)" is relative to the screen height (including scroll bars).<br>This is useful if you wanna display a same character length on any devices on smartphones.<br>Note: Please set media queries appropriately.</span><span class="ja" lang="ja">「vw（ビューポートの幅）」は画面の幅（スクロールバー含む）に対する相対値です。<br>「vh（ビューポートの高さ）」は画面の高さ（スクロールバー含む）に対する相対値です。<br>これは、スマートフォン上の任意のデバイスで同じ文字数を表示する場合に便利です。<br>注意：メディアクエリの設定は適切に行ってください。</span><span class="cn" lang="zh-cn">"vw（视口宽度） "是相对于屏幕宽度的（包括滚动条）。<br>"vh（视口高度）"是相对于屏幕高度的（包括滚动条）。<br>如果你想在智能手机的任何设备上显示相同的字符长度，这很有用。<br>注意：请适当地设置媒体查询。</span></li>
     </ul>
-    <h2><span class="en" lang="en">The metallic means and aspect ratio</span><span class="ja" lang="ja">貴金属平均とアスペクト比</span></h2>
-    <p><span class="en" lang="en">The calculation result is rounded down to four decimal places.<br>When converting to an integer, please follow the respective policy.</span><span class="ja" lang="ja">計算結果は小数点4桁切り捨てです。<br>整数に変換する時には、それぞれの方針に従って処理してください。</span></p>
-    <p><span class="en" lang="en">The metallic means (metallic ratio) is the ratio that humans have felt beautiful since ancient times.</span><span class="ja" lang="ja">貴金属平均（貴金属比）は、古くから人間が美しいと感じる比率です。</span></p>
-    <h3><span class="en" lang="en">The metallic means (metallic ratio)</span><span class="ja" lang="ja">貴金属平均（貴金属比）</span></h3>
+    <h2><span class="en" lang="en">Metallic mean and aspect ratio</span><span class="ja" lang="ja">貴金属平均とアスペクト比</span><span class="cn" lang="zh-cn">貴金屬比例和长宽比</span></h2>
+    <p><span class="en" lang="en">Calculation results are rounded down to 4 decimal digits.<br>When converting to integers, please follow the own policy.</span><span class="ja" lang="ja">計算結果は小数点4桁切り捨てです。<br>整数に変換する時には、それぞれの方針に従って処理してください。</span><span class="cn" lang="zh-cn">计算结果被四舍五入到小数点后4位。<br>当转换为整数时，请遵循自己的政策。</span></p>
+    <p><span class="en" lang="en">The metallic mean (metallic ratio) is a ratio that people feel beauty for ages.</span><span class="ja" lang="ja">貴金属平均（貴金属比）は、古くから人間が美しいと感じる比率です。</span><span class="cn" lang="zh-cn">貴金屬比例（贵金属比率）是一个让人感到美的比率，历来如此。</span></p>
+    <h3><span class="en" lang="en">Metallic mean (metallic ratio)</span><span class="ja" lang="ja">貴金属平均（貴金属比）</span><span class="cn" lang="zh-cn">貴金屬比例（贵金属比率）</span></h3>
     <ul>
-      <li><span class="en" lang="en">The golden ratio is the ratio that humans feel most beautiful.<br>It&#039;s used for historical buildings, an art-object, business cards, and company logos.</span><span class="ja" lang="ja">黄金比は人間が最も美しいと感じる比率です。<br>歴史的建造物や美術品、名刺、各社ロゴマークに使用されています。</span></li>
-      <li><span class="en" lang="en">The silver ratio is a ratio that has been beautiful in Japan since ancient times.<br>Used for paper standards (A series and B series), Japanese anime characters, and ancient Japanese buildings.</span><span class="ja" lang="ja">白銀比は日本で古くから美しいと感じる比率です。<br>用紙の規格（A判、B判）、日本のアニメキャラクター、日本古来の建造物に使用されています。</span></li>
-      <li><span class="en" lang="en">The bronze ratio is one of the metal ratios, but unfortunately it isn&#039;t used much.<br>It might be good to use it for the main image of the homepage.</span><span class="ja" lang="ja">青銅比は貴金属比の一つですが、残念ながらあまり使われていません。<br>トップページのメイン画像に使用するのもいいかもしれません。</span></li>
+      <li><span class="en" lang="en">The golden ratio is the ratio that people feel most beautiful.<br>Used on historic buildings, works of art, business cards, and logos of various companies.</span><span class="ja" lang="ja">黄金比は人間が最も美しいと感じる比率です。<br>歴史的建造物や美術品、名刺、各社ロゴマークに使用されています。</span><span class="cn" lang="zh-cn">黄金比例是人们觉得最美的比例。<br>用于历史建筑、艺术作品、名片和各种公司的标志上。</span></li>
+      <li><span class="en" lang="en">The silver ratio is a ratio that Japan feels beautiful for ages.<br>Used for paper standards (A series, B series), Japanese animation characters, and traditional Japanese buildings.</span><span class="ja" lang="ja">白銀比は日本で古くから美しいと感じる比率です。<br>用紙の規格（A判、B判）、日本のアニメキャラクター、日本古来の建造物に使用されています。</span><span class="cn" lang="zh-cn">白银比率是人们在日本长期以来感到美丽的一个比率。<br>用于纸张标准（A系列、B系列）、日本动画人物和日本传统建筑。</span></li>
+      <li><span class="en" lang="en">The bronze ratio is one of the metallic ratios, but unfortunately isn&#039;t used so much.<br>Maybe using a main image for the front page would be fine.</span><span class="ja" lang="ja">青銅比は貴金属比の一つですが、残念ながらあまり使われていません。<br>トップページのメイン画像に使用するのもいいかもしれません。</span><span class="cn" lang="zh-cn">青铜比率是金属比率之一，但不幸的是，并不常用。<br>也许可以用它作为首页的主图。</span></li>
     </ul>
-    <h3><span class="en" lang="en">Aspect ratio</span><span class="ja" lang="ja">アスペクト比</span></h3>
+    <h3><span class="en" lang="en">Aspect ratio</span><span class="ja" lang="ja">アスペクト比</span><span class="cn" lang="zh-cn">纵横比</span></h3>
     <ul>
-      <li><span class="en" lang="en">L size.<br>L size is the standard size for Japanese photos.</span><span class="ja" lang="ja">L判<br>L判は日本の写真の標準サイズです。</span></li>
+      <li><span class="en" lang="en">L size<br>L size is the standard size for Japanese photos.</span><span class="ja" lang="ja">L判<br>L判は日本の写真の標準サイズです。</span><span class="cn" lang="zh-cn">L尺寸<br>L尺寸是日本照片的标准尺寸。</span></li>
     </ul>
     <p id="copyright"><small>2019 &copy; EU-Create. All rights reserved.</small></p>
   </body>

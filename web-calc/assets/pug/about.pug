@@ -5,7 +5,7 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
-    title About me（私について） - #{siteName}
+    title About me 私について 关于我 - #{siteName}
     include _icon.pug
     link(rel="stylesheet", href=cssUrl+"common.css")
     link(rel="stylesheet", href=cssUrl+"about.css")
@@ -15,6 +15,7 @@ html
     h1
       span.en(lang="en") About me
       span.ja(lang="ja") 私について
+      span.cn(lang="zh-cn") 关于我
     p
       span.en(lang="en")
         | Types of companies: Self-employment
@@ -32,6 +33,14 @@ html
         | 代表者名：内堀 英一
         br
         | 事業内容：Webデザイナー、Webプログラマー、デジタルアーティスト
+      span.cn(lang="zh-cn")
+        | 公司类型：自营职业
+        br
+        | 企业名称：亿优创造
+        br
+        | 代表人姓名：内堀 荣一
+        br
+        | 服务：网页设计师、网页程序员、IT工程师、数字艺术家（音乐）
     p
       span.en(lang="en")
         | Visit my 
@@ -41,4 +50,8 @@ html
         | 詳細は私の
         a(href="https://www.eu-create.net/", target="_blank") ウェブサイト
         | をご覧ください。
+      span.cn(lang="zh-cn")
+        | 请访问我的
+        a(href="https://cn.eucreate.net/", target="_blank") 网站
+        | 了解详情。
     include _pageFooter

@@ -1,15 +1,15 @@
-@import base
+@use "base"
 
 h1
   padding: .25em .5em
-  background-color: $baseColor
+  background-color: base.$baseColor
   color: #fff
   border-radius: 5px
   border-bottom: none
-  font-size: (26 / $baseFontSize) + rem
+  font-size: (26 / base.$baseFontSize) + rem
 nav
   margin-top: 1em
-  border-top: 2px solid $baseColor
+  border-top: 2px solid base.$baseColor
   ul
     list-style: none
     margin: 0
@@ -17,15 +17,15 @@ nav
     box-sizing: border-box
     li
       position: relative
-      border-bottom: 2px solid $baseColor
+      border-bottom: 2px solid base.$baseColor
       a
         position: relative
         display: block
         padding: .75em 28px .75em 10px
-        color: $baseColor
-        font-size: (21 / $baseFontSize) + rem
+        color: base.$baseColor
+        font-size: (21 / base.$baseFontSize) + rem
         text-decoration: none
-        &:after
+        &::after
           content: ''
           position: absolute
           display: block
@@ -35,7 +35,7 @@ nav
           width: 15px
           height: 15px
           margin: auto
-          border-top: 4px solid $baseColor
-          border-right: 4px solid $baseColor
+          border-top: 4px solid base.$baseColor
+          border-right: 4px solid base.$baseColor
           transform: rotate(45deg)
         

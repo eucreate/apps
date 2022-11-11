@@ -5,7 +5,7 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
-    title Convert Units（単位変換） - #{siteName}
+    title Convert Units 単位変換 单位转换 - #{siteName}
     include _icon.pug
     link(rel="stylesheet", href=cssUrl+"common.css")
     link(rel="stylesheet", href=cssUrl+"convert-units.css")
@@ -16,6 +16,7 @@ html
     h1
       span.en(lang="en") Convert Units
       span.ja(lang="ja") 単位変換
+      span.cn(lang="zh-cn") 单位转换
     p
       span.en(lang="en")
         | Enter the value of the standard unit you want to calculate.
@@ -25,9 +26,14 @@ html
         | 計算したい基準となる単位の値を入力します。
         br
         | 変換する単位のボタンを押して計算します。
+      span.cn(lang="zh-cn")
+        | 输入你要计算的标准单位的数值。
+        br
+        | 单击或点击要转换的单位的按钮并进行计算。
     h2
       span.en(lang="en") Temperature
       span.ja(lang="ja") 温度
+      span.cn(lang="zh-cn") 温度
     input#celsius(type="number" step="0.01" value="0")
     | &nbsp;℃
     br
@@ -39,6 +45,7 @@ html
     h2
       span.en(lang="en") Length
       span.ja(lang="ja") 長さ
+      span.cn(lang="zh-cn") 长度
     input#centimeters(type="number" value="0")
     | &nbsp;cm
     br
@@ -47,12 +54,13 @@ html
     input#feet(type="number" value="0")
     | &nbsp;feet
     div
-      input#changeInch(type="button" value="cm → inch, feet")
-      input#changeCentimeters(type="button" value="inch → cm, feet")
+      input#changeInch(type="button" value="cm → inch")
+      input#changeCentimeters(type="button" value="inch → cm")
       input#changeFeet(type="button" value="feet → cm, inch")
     h3
       span.en(lang="en") Conversion of meters, yards and feet
       span.ja(lang="ja") mとヤードとフィートの変換
+      span.cn(lang="zh-cn") 米、码和英尺的转换
     input#meter(type="number" value="0")
     | &nbsp;m
     br
@@ -65,8 +73,9 @@ html
       input#changeMeter(type="button" value="yard → m, feet")
       input#ChangeFeet2(type="button" value="feet → m, yard")
     h3
-      span.en(lang="en") Conversion of meters and miles
+      span.en(lang="en") Conversion of kilometers and miles
       span.ja(lang="ja") kmとマイルの変換
+      span.cn(lang="zh-cn") 千米和英里的转换
     input#kilometer(type="number" value="0")
     | &nbsp;km
     br
@@ -78,6 +87,7 @@ html
     h2
       span.en(lang="en") Weight
       span.ja(lang="ja") 重量
+      span.cn(lang="zh-cn") 重量
     input#kg(type="number" value="0")
     | &nbsp;kg
     br
@@ -89,9 +99,9 @@ html
     h2
       span.en(lang="en") Volume
       span.ja(lang="ja") 体積
+      span.cn(lang="zh-cn") 体积
     input#liters(type="number" value="0")
     | &nbsp;L
-    br
     input#USGallons(type="number" value="0")
     | &nbsp;US Gallons&nbsp;
     input#UKGallons(type="number" value="0")
@@ -103,6 +113,7 @@ html
     h2
       span.en(lang="en") Speed
       span.ja(lang="ja") 速度
+      span.cn(lang="zh-cn") 速度
     input#mps(type="number" value="0")
     | &nbsp;m/s
     br
@@ -111,4 +122,32 @@ html
     div
       input#changeKmph(type="button" value="m/s → kmph")
       input#changeMps(type="button" value="kmph → m/s")
+    h2
+      span.en(lang="en") Currency
+      span.ja(lang="ja") 通貨
+      span.cn(lang="zh-cn") 货币
+    p Note: This calculation is experimental.
+    p
+      input#btnHReload(type="button", value="Reload")
+    p#textCurrencyDate
+    input#JPY(type="number" value="0" min="0")
+    | &nbsp;JPY,&nbsp;
+    input#USD(type="number" value="0" step="0.01" min="0")
+    | &nbsp;USD,&nbsp;
+    input#EUR(type="number" value="0" step="0.01" min="0")
+    | &nbsp;EUR,&nbsp;
+    input#GBP(type="number" value="0" step="0.01" min="0")
+    | &nbsp;GBP,&nbsp;
+    input#AUD(type="number" value="0" step="0.01" min="0")
+    | &nbsp;AUD,&nbsp;
+    input#CAD(type="number" value="0" step="0.01" min="0")
+    | &nbsp;CAD
+    #btnCurrency
+      input#changeJPY(type="button" value="JPY → Other currencies")
+      input#changeUSD(type="button" value="USD → Other currencies")
+      input#changeEUR(type="button" value="EUR → Other currencies")
+      input#changeGBP(type="button" value="GBP → Other currencies")
+      input#changeAUD(type="button" value="AUD → Other currencies")
+      input#changeCAD(type="button" value="CAD → Other currencies")
     include _pageFooter
+    //-script(src=jsUrl+"convert-unitsAfter.js")

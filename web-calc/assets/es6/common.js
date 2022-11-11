@@ -1,52 +1,75 @@
-var strage = sessionStorage;
+const storage = sessionStorage;
+const lStorage = localStorage;
+const languageClassNameJa = document.getElementsByClassName('ja');
+const languageClassNameEn = document.getElementsByClassName('en');
+const languageClassNameCn = document.getElementsByClassName('cn');
 
 document.addEventListener('DOMContentLoaded', function() {
-  var elemLang = document.getElementById('languageSelect');
+  const elemLang = document.getElementById('languageSelect');
   
-  if (strage.getItem('dispLang') === "ja") {
-    strage.setItem('dispLang', 'ja');
+  if (storage.getItem('dispLang') === "ja") {
+    storage.setItem('dispLang', 'ja');
     elemLang.options[1].selected = true;
-  } else {
-    strage.setItem('dispLang', 'en');
+    elemLang.options[2].selected = false;
+  } else if (storage.getItem('dispLang') === "cn") {
+    storage.setItem('dispLang', 'cn');
     elemLang.options[1].selected = false;
+    elemLang.options[2].selected = true;
+  } else {
+    storage.setItem('dispLang', 'en');
+    elemLang.options[1].selected = false;
+    elemLang.options[2].selected = false;
   }
   
   elemLang.onchange = changeLanguage;
 }, false);
 
 document.addEventListener('DOMContentLoaded', function() {
-  var languageClassNameJa = document.getElementsByClassName('ja');
-  var languageClassNameEn = document.getElementsByClassName('en');
   
-  if (strage.getItem('dispLang') === "ja") {
-    for (var i = 0, len = languageClassNameJa.length; i < len; i++) {
+  if (storage.getItem('dispLang') === "ja") {
+    for (let i = 0, len = languageClassNameJa.length; i < len; i++) {
       languageClassNameJa[i].style.display = 'inline';
+      languageClassNameEn[i].style.display = 'none';
+      languageClassNameCn[i].style.display = 'none';
+    }
+  } else if (storage.getItem('dispLang') === "cn") {
+    for (let i = 0, len = languageClassNameCn.length; i < len; i++) {
+      languageClassNameCn[i].style.display = 'inline';
+      languageClassNameJa[i].style.display = 'none';
       languageClassNameEn[i].style.display = 'none';
     }
   } else {
-    for (var i = 0, len = languageClassNameJa.length; i < len; i++) {
+    for (let i = 0, len = languageClassNameJa.length; i < len; i++) {
       languageClassNameJa[i].style.display = '';
       languageClassNameEn[i].style.display = '';
+      languageClassNameCn[i].style.display = '';
     }
   }
 }, false);
 
 function changeLanguage(){
-  var elemLang = document.getElementById('languageSelect');
-  var languageClassNameJa = document.getElementsByClassName('ja');
-  var languageClassNameEn = document.getElementsByClassName('en');
+  const elemLang = document.getElementById('languageSelect');
 
   if (elemLang.value === "ja") {
-    strage.setItem('dispLang', 'ja');
-    for (var i = 0, len = languageClassNameJa.length; i < len; i++) {
+    storage.setItem('dispLang', 'ja');
+    for (let i = 0, len = languageClassNameJa.length; i < len; i++) {
       languageClassNameJa[i].style.display = 'inline';
       languageClassNameEn[i].style.display = 'none';
+      languageClassNameCn[i].style.display = 'none';
+    }
+  } else if (elemLang.value === "cn") {
+    storage.setItem('dispLang', 'cn');
+    for (let i = 0, len = languageClassNameCn.length; i < len; i++) {
+      languageClassNameCn[i].style.display = 'inline';
+      languageClassNameEn[i].style.display = 'none';
+      languageClassNameJa[i].style.display = 'none';
     }
   } else {
-    strage.setItem('dispLang', 'en');
-    for (var i = 0, len = languageClassNameJa.length; i < len; i++) {
+    storage.setItem('dispLang', 'en');
+    for (let i = 0, len = languageClassNameJa.length; i < len; i++) {
       languageClassNameJa[i].style.display = '';
       languageClassNameEn[i].style.display = '';
+      languageClassNameCn[i].style.display = '';
     }
   }
 }
