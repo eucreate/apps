@@ -7,6 +7,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/icon180.png">
     <link rel="icon" type="image/png" href="img/icon256.png">
+    <link rel="stylesheet" href="css/bootstrap.custom.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/web-calc.css">
     <script src="js/common.js"></script>
@@ -22,61 +23,80 @@
     </header>
     <h1><span class="en" lang="en">Website Calculation Tool</span><span class="ja" lang="ja">ウェブサイト計算ツール</span><span class="cn" lang="zh-cn">网站的计算工具</span></h1>
     <p><span class="en" lang="en">A calculation tool useful for web design and website creation.</span><span class="ja" lang="ja">ウェブデザインやwebサイト制作に役立つ計算ツールです。</span><span class="cn" lang="zh-cn">一个用于网页设计和网站开发的计算工具。</span></p>
-    <p><span class="en" lang="en">The metallic means and aspect ratio is calculated based on the input value entered in "Standard pixel".<br>Calculation of "%, vw, vh, em, rem" is to input "Standard Pixel" and "Wanted Pixel".</span><span class="ja" lang="ja">貴金属比やアスペクト比は入力値が「基準ピクセル」に入力した値で計算されます。<br>「%, vw, vh, em, rem」の計算は、基準ピクセルと求めるピクセルを入力することで計算されます。</span><span class="cn" lang="zh-cn">金属手段和长宽比是根据 "标准像素 "中输入的数值计算的。<br>计算"%, vw, vh, em, rem "是要输入 "标准像素 "和 "想要的像素"。</span></p>
-    <h2><span class="en" lang="en">Numeric input</span><span class="ja" lang="ja">数値入力</span><span class="cn" lang="zh-cn">数值输入</span></h2>
-    <div><span class="en" lang="en">Standard pixel</span><span class="ja" lang="ja">基準ピクセル</span><span class="cn" lang="zh-cn">标准像素</span><br>
-      <input id="num1" type="number" step="0.001" value="0">
-    </div>
-    <div><span class="en" lang="en">Wanted Pixel</span><span class="ja" lang="ja">求めるピクセル</span><span class="cn" lang="zh-cn">想要的像素</span><br>
-      <input id="num2" type="number" step="0.001" value="0">
-    </div>
-    <h2><span class="en" lang="en">Calculation result</span><span class="ja" lang="ja">計算結果</span><span class="cn" lang="zh-cn">计算结果</span></h2>
-    <div>
-      <input id="result1" type="text" value="0" readonly="readonly"> %, vw, vh
-    </div>
-    <div>
-      <input id="result2" type="text" value="0" readonly="readonly"> em, rem
+    <p class="mb-0 alert alert-info d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle flex-shrink-0 mt-1 me-1" viewBox="0 0 16 16">
+<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+<path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg><span class="en" lang="en">The metallic means and aspect ratio is calculated based on the input value entered in "Standard pixel".<br>Calculation of "%, vw, vh, em, rem" is to input "Standard Pixel" and "Wanted Pixel".</span><span class="ja" lang="ja">貴金属比やアスペクト比は入力値が「基準ピクセル」に入力した値で計算されます。<br>「%, vw, vh, em, rem」の計算は、基準ピクセルと求めるピクセルを入力することで計算されます。</span><span class="cn" lang="zh-cn">金属手段和长宽比是根据 "标准像素 "中输入的数值计算的。<br>计算"%, vw, vh, em, rem "是要输入 "标准像素 "和 "想要的像素"。</span>
+    </p>
+    <div class="container"> 
+      <div id="numericInput">
+        <h2><span class="en" lang="en">Numeric input</span><span class="ja" lang="ja">数値入力</span><span class="cn" lang="zh-cn">数值输入</span></h2>
+        <div>
+          <label class="form-label" for="num1"><span class="en" lang="en">Standard pixel</span><span class="ja" lang="ja">基準ピクセル</span><span class="cn" lang="zh-cn">标准像素</span></label>
+          <input class="form-control" id="num1" type="number" step="0.001" value="0">
+        </div>
+        <div>
+          <label class="form-label" for="num2"><span class="en" lang="en">Wanted Pixel</span><span class="ja" lang="ja">求めるピクセル</span><span class="cn" lang="zh-cn">想要的像素</span></label>
+          <input class="form-control" id="num2" type="number" step="0.001" value="0">
+        </div>
+      </div>
+      <div id="calculationResult">
+        <h2><span class="en" lang="en">Calculation result</span><span class="ja" lang="ja">計算結果</span><span class="cn" lang="zh-cn">计算结果</span></h2>
+        <p class="input-group">
+          <input class="form-control" id="result1" type="text" value="0" readonly="readonly"><span class="input-group-text">%, vw, vh</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="result2" type="text" value="0" readonly="readonly"><span class="input-group-text">em, rem</span>
+        </p>
+      </div>
     </div>
     <h2><span class="en" lang="en">Width and height calculation results</span><span class="ja" lang="ja">幅と高さの計算結果</span><span class="cn" lang="zh-cn">宽和高的计算结果</span></h2>
-    <select id="changeWidthHeight">
+    <select class="me-2" id="changeWidthHeight">
       <option value="w" selected="">Calculated Width</option>
       <option value="h">Calculated Height</option>
     </select><span id="inputNum1"></span>
-    <p><img class="en" src="img/image_size_en.png"><img class="ja" src="img/image_size_ja.png"><img class="cn" src="img/image_size_cn.png"></p>
-    <div id="metallicMeansResult">
-      <h3><span class="en" lang="en">Metallic means</span><span class="ja" lang="ja">貴金属比</span><span class="cn" lang="zh-cn">貴金屬比例</span></h3>
-      <div><span class="en" lang="en">Golden ratio</span><span class="ja" lang="ja">黄金比</span><span class="cn" lang="zh-cn">黄金比例</span>
-        <input id="goldenRatio" type="text" value="0" readonly="readonly" size="10"> px
+    <p class="mb-0"><img class="en" src="img/image_size_en.png"><img class="ja" src="img/image_size_ja.png"><img class="cn" src="img/image_size_cn.png"></p>
+    <div class="container"> 
+      <div id="metallicMeansResult">
+        <h3><span class="en" lang="en">Metallic means</span><span class="ja" lang="ja">貴金属比</span><span class="cn" lang="zh-cn">貴金屬比例</span></h3>
+        <p class="input-group"><span class="input-group-text"><span class="en" lang="en">Golden ratio</span><span class="ja" lang="ja">黄金比</span><span class="cn" lang="zh-cn">黄金比例</span></span>
+          <input class="form-control" id="goldenRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group"><span class="input-group-text"><span class="en" lang="en">Silver ratio</span><span class="ja" lang="ja">白銀比</span><span class="cn" lang="zh-cn">白銀比例</span></span>
+          <input class="form-control" id="silverRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group mb-0"><span class="input-group-text"><span class="en" lang="en">Bronze ratio</span><span class="ja" lang="ja">青銅比</span><span class="cn" lang="zh-cn">青铜比率</span></span>
+          <input class="form-control" id="bronzeRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
       </div>
-      <div><span class="en" lang="en">Silver ratio</span><span class="ja" lang="ja">白銀比</span><span class="cn" lang="zh-cn">白銀比例</span>
-        <input id="silverRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span class="en" lang="en">Bronze ratio</span><span class="ja" lang="ja">青銅比</span><span class="cn" lang="zh-cn">青铜比率</span>
-        <input id="bronzeRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-    </div>
-    <div id="aspectRatioResult">
-      <h3><span class="en" lang="en">Aspect ratio</span><span class="ja" lang="ja">アスペクト比</span><span class="cn" lang="zh-cn">纵横比</span></h3>
-      <div><span>4:3</span>
-        <input id="sdRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span>3:2</span>
-        <input id="threeToTwoRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span class="en" lang="en">L size</span><span class="ja" lang="ja">L判</span><span class="cn" lang="zh-cn">L尺寸</span>
-        <input id="lSizeRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span>16:9</span>
-        <input id="hdRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span>16:10</span>
-        <input id="sixteenToTenRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span>21:9</span>
-        <input id="twentyOneByNineRatio" type="text" value="0" readonly="readonly" size="10"> px
-      </div>
-      <div><span class="en" lang="en">OGP image<br>* Please produce with a width of 1200px and a height of 630px or more.</span><span class="ja" lang="ja">OGPイメージ<br>※幅1200px、高さ630px以上で制作してください。</span><span class="cn" lang="zh-cn">OGP图像<br>* 请以1200px的宽度和630px以上的高度制作。</span><br>
-        <input id="ogpImageRatio" type="text" value="0" readonly="readonly" size="10"> px
+      <div id="aspectRatioResult">
+        <h3><span class="en" lang="en">Aspect ratio</span><span class="ja" lang="ja">アスペクト比</span><span class="cn" lang="zh-cn">纵横比</span></h3>
+        <p class="input-group"><span class="input-group-text">4:3</span>
+          <input class="form-control" id="sdRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group"><span class="input-group-text">3:2</span>
+          <input class="form-control" id="threeToTwoRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group"><span class="input-group-text"><span class="en" lang="en">L size</span><span class="ja" lang="ja">L判</span><span class="cn" lang="zh-cn">L尺寸</span></span>
+          <input class="form-control" id="lSizeRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group"><span class="input-group-text">16:9</span>
+          <input class="form-control" id="hdRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group"><span class="input-group-text">16:10</span>
+          <input class="form-control" id="sixteenToTenRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <p class="input-group"><span class="input-group-text">21:9</span>
+          <input class="form-control" id="twentyOneByNineRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+        </p>
+        <div><span class="en" lang="en">OGP image
+            <p class="alert alert-info mt-0">* Please produce with a width of 1200px and a height of 630px or more.</p></span><span class="ja" lang="ja">OGPイメージ
+            <p class="alert alert-info mt-0">※幅1200px、高さ630px以上で制作してください。</p></span><span class="cn" lang="zh-cn">OGP图像
+            <p class="alert alert-info mt-0">* 请以1200px的宽度和630px以上的高度制作。</p></span>
+          <div class="input-group">
+            <input class="form-control" id="ogpImageRatio" type="text" value="0" readonly="readonly" size="10"><span class="input-group-text">px</span>
+          </div>
+        </div>
       </div>
     </div>
     <p id="copyright"><small>2019 &copy; EU-Create. All rights reserved.</small></p>

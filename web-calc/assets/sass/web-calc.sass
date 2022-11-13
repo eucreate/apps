@@ -12,57 +12,24 @@ input
   &[type="number"], &[type="text"]
     font-size: 1rem
 
-#inputNum1
-  display: inline-block
-  margin-left: .25em
-
-#result1,
-#result2
-  width: 180px
-
 #metallicMeansResult
   .green
     background-color: base.$secondColor
-  div
-    @for $i from 1 through 3
-      &:nth-of-type(#{$i})
-        display: inline-flex
-        align-items: center
-        width: 270px
-        input[type="text"]
-          margin-right: .25em
-          margin-left: .25em
-    @for $i from 1 through 3
-      &:nth-of-type(#{$i})
-        span
-          &.en
-            display: inline-block
-            width: 100px
-            text-align: right
 
 #aspectRatioResult
   .green
     background-color: base.$secondColor
-  @for $i from 1 through 6
-    div
-      &:nth-of-type(#{$i})
-        display: inline-flex
-        align-items: center
-        width: 226px
-        span
-          width: 56px
-          text-align: right
-        input[type="text"]
-          margin-right: .25em
-          margin-left: .25em
 
-@media screen and (max-width: 360px)
-  #metallicMeansResult
-    div
-      @for $i from 1 through 3
-        &:nth-of-type(#{$i})
-          span
-            &.en
-              display: inline-block
-              width: 100%
-              text-align: left
+.container
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 1rem
+
+.form-control
+  &[readonly]
+    background-color: #fcffff
+
+@media screen and (max-width: 575.98px)
+  .container
+    grid-template-columns: 1fr
+    gap: 0

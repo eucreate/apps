@@ -8,11 +8,11 @@ html
     title #{siteName}
     include _icon.pug
     include _pwa.pug
+    link(rel="stylesheet", href=cssUrl+"bootstrap.custom.min.css")
     link(rel="stylesheet", href=cssUrl+"common.css")
     link(rel="stylesheet", href=cssUrl+"index.css")
     script(src=jsUrl+"common.js")
   body
-    //-select#languageSelect(onchange="changeLanguage(this)")
     select#languageSelect
       option(value="en") English
       option(value="ja") 日本語

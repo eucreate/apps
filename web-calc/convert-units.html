@@ -7,6 +7,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/icon180.png">
     <link rel="icon" type="image/png" href="img/icon256.png">
+    <link rel="stylesheet" href="css/bootstrap.custom.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/convert-units.css">
     <script src="js/common.js"></script>
@@ -21,81 +22,133 @@
       </select>
     </header>
     <h1><span class="en" lang="en">Convert Units</span><span class="ja" lang="ja">単位変換</span><span class="cn" lang="zh-cn">单位转换</span></h1>
-    <p><span class="en" lang="en">Enter the value of the standard unit you want to calculate.<br>Click or tap the button of the unit to be converted and calculate.</span><span class="ja" lang="ja">計算したい基準となる単位の値を入力します。<br>変換する単位のボタンを押して計算します。</span><span class="cn" lang="zh-cn">输入你要计算的标准单位的数值。<br>单击或点击要转换的单位的按钮并进行计算。</span></p>
-    <h2><span class="en" lang="en">Temperature</span><span class="ja" lang="ja">温度</span><span class="cn" lang="zh-cn">温度</span></h2>
-    <input id="celsius" type="number" step="0.01" value="0">&nbsp;℃<br>
-    <input id="fahrenheit" type="number" step="0.01" value="0">&nbsp;℉
-    <div>
-      <input id="changeFahrenheit" type="button" value="℃ → ℉">
-      <input id="changeCelsius" type="button" value="℉ → ℃">
+    <p class="alert alert-info"><span class="en" lang="en">Enter the value of the standard unit you want to calculate.<br>Click or tap the button of the unit to be converted and calculate.</span><span class="ja" lang="ja">計算したい基準となる単位の値を入力します。<br>変換する単位のボタンを押して計算します。</span><span class="cn" lang="zh-cn">输入你要计算的标准单位的数值。<br>单击或点击要转换的单位的按钮并进行计算。</span></p>
+    <div class="container">
+      <div id="temperature">
+        <h2 class="mt-0"><span class="en" lang="en">Temperature</span><span class="ja" lang="ja">温度</span><span class="cn" lang="zh-cn">温度</span></h2>
+        <p class="input-group">
+          <input class="form-control" id="celsius" type="number" step="0.01" value="0"><span class="input-group-text">℃</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="fahrenheit" type="number" step="0.01" value="0"><span class="input-group-text">℉</span>
+        </p>
+        <p class="mb-3">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeFahrenheit" type="button" value="℃ → ℉">
+          <input class="btn btn-outline-primary w-100" id="changeCelsius" type="button" value="℉ → ℃">
+        </p>
+      </div>
+      <div id="length">
+        <h2 class="mt-0"><span class="en" lang="en">Length</span><span class="ja" lang="ja">長さ</span><span class="cn" lang="zh-cn">长度</span></h2>
+        <p class="input-group">
+          <input class="form-control" id="centimeters" type="number" value="0"><span class="input-group-text">cm</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="inch" type="number" value="0"><span class="input-group-text">inch</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="feet" type="number" value="0"><span class="input-group-text">feet</span>
+        </p>
+        <p class="mb-3">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeInch" type="button" value="cm → inch">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeCentimeters" type="button" value="inch → cm">
+          <input class="btn btn-outline-primary w-100" id="changeFeet" type="button" value="feet → cm, inch">
+        </p>
+      </div>
+      <div id="convMYF">
+        <h3 class="mt-0"><span class="en" lang="en">Conversion of meters, yards and feet</span><span class="ja" lang="ja">mとヤードとフィートの変換</span><span class="cn" lang="zh-cn">米、码和英尺的转换</span></h3>
+        <p class="input-group">
+          <input class="form-control" id="meter" type="number" value="0"><span class="input-group-text">m</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="yard" type="number" value="0"><span class="input-group-text">yard</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="feet2" type="number" value="0"><span class="input-group-text">feet</span>
+        </p>
+        <p class="mb-3">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeYard" type="button" value="m → yard, feet">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeMeter" type="button" value="yard → m, feet">
+          <input class="btn btn-outline-primary w-100" id="ChangeFeet2" type="button" value="feet → m, yard">
+        </p>
+      </div>
+      <div id="convKmMiles">
+        <h3 class="mt-0"><span class="en" lang="en">Conversion of kilometers and miles</span><span class="ja" lang="ja">kmとマイルの変換</span><span class="cn" lang="zh-cn">千米和英里的转换</span></h3>
+        <p class="input-group">
+          <input class="form-control" id="kilometer" type="number" value="0"><span class="input-group-text">km</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="mile" type="number" value="0"><span class="input-group-text">mile</span>
+        </p>
+        <p class="mb-3">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeMile" type="button" value="km → mile">
+          <input class="btn btn-outline-primary w-100" id="changeKilometer" type="button" value="mile → km">
+        </p>
+      </div>
+      <div id="weight">
+        <h2 class="mt-0"><span class="en" lang="en">Weight</span><span class="ja" lang="ja">重量</span><span class="cn" lang="zh-cn">重量</span></h2>
+        <p class="input-group">
+          <input class="form-control" id="kg" type="number" value="0"><span class="input-group-text">kg</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="pound" type="number" value="0"><span class="input-group-text">pound</span>
+        </p>
+        <p class="mb-3">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changePound" type="button" value="kg → lb">
+          <input class="btn btn-outline-primary w-100" id="changeKg" type="button" value="lb → kg">
+        </p>
+      </div>
+      <div id="volume">
+        <h2 class="mt-0"><span class="en" lang="en">Volume</span><span class="ja" lang="ja">体積</span><span class="cn" lang="zh-cn">体积</span></h2>
+        <p class="input-group">
+          <input class="form-control" id="liters" type="number" value="0"><span class="input-group-text">L</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="USGallons" type="number" value="0"><span class="input-group-text">US Gallons</span>
+        </p>
+        <p class="input-group">
+          <input class="form-control" id="UKGallons" type="number" value="0"><span class="input-group-text">UK Gallons</span>
+        </p>
+        <p class="mb-0">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeGallons" type="button" value="L → gal">
+          <input class="btn btn-outline-primary w-100 mb-3" id="changeLiters" type="button" value="gal(US) → L, gal(UK)">
+          <input class="btn btn-outline-primary w-100" id="changeLitersUSG" type="button" value="gal(UK) → L, gal(US)">
+        </p>
+      </div>
     </div>
-    <h2><span class="en" lang="en">Length</span><span class="ja" lang="ja">長さ</span><span class="cn" lang="zh-cn">长度</span></h2>
-    <input id="centimeters" type="number" value="0">&nbsp;cm<br>
-    <input id="inch" type="number" value="0">&nbsp;inch&nbsp;
-    <input id="feet" type="number" value="0">&nbsp;feet
-    <div>
-      <input id="changeInch" type="button" value="cm → inch">
-      <input id="changeCentimeters" type="button" value="inch → cm">
-      <input id="changeFeet" type="button" value="feet → cm, inch">
+    <div id="speed">
+      <h2><span class="en" lang="en">Speed</span><span class="ja" lang="ja">速度</span><span class="cn" lang="zh-cn">速度</span></h2>
+      <p class="input-group">
+        <input class="form-control" id="mps" type="number" value="0"><span class="input-group-text">m/s</span>
+      </p>
+      <p class="input-group">
+        <input class="form-control" id="kmph" type="number" value="0"><span class="input-group-text">kmph</span>
+      </p>
+      <p class="mb-0">
+        <input class="btn btn-outline-primary w-100 mb-3" id="changeKmph" type="button" value="m/s → kmph">
+        <input class="btn btn-outline-primary w-100" id="changeMps" type="button" value="kmph → m/s">
+      </p>
     </div>
-    <h3><span class="en" lang="en">Conversion of meters, yards and feet</span><span class="ja" lang="ja">mとヤードとフィートの変換</span><span class="cn" lang="zh-cn">米、码和英尺的转换</span></h3>
-    <input id="meter" type="number" value="0">&nbsp;m<br>
-    <input id="yard" type="number" value="0">&nbsp;yard&nbsp;
-    <input id="feet2" type="number" value="0">&nbsp;feet
-    <div>
-      <input id="changeYard" type="button" value="m → yard, feet">
-      <input id="changeMeter" type="button" value="yard → m, feet">
-      <input id="ChangeFeet2" type="button" value="feet → m, yard">
-    </div>
-    <h3><span class="en" lang="en">Conversion of kilometers and miles</span><span class="ja" lang="ja">kmとマイルの変換</span><span class="cn" lang="zh-cn">千米和英里的转换</span></h3>
-    <input id="kilometer" type="number" value="0">&nbsp;km<br>
-    <input id="mile" type="number" value="0">&nbsp;mile
-    <div>
-      <input id="changeMile" type="button" value="km → mile">
-      <input id="changeKilometer" type="button" value="mile → km">
-    </div>
-    <h2><span class="en" lang="en">Weight</span><span class="ja" lang="ja">重量</span><span class="cn" lang="zh-cn">重量</span></h2>
-    <input id="kg" type="number" value="0">&nbsp;kg<br>
-    <input id="pound" type="number" value="0">&nbsp;pound
-    <div>
-      <input id="changePound" type="button" value="kg → lb">
-      <input id="changeKg" type="button" value="lb → kg">
-    </div>
-    <h2><span class="en" lang="en">Volume</span><span class="ja" lang="ja">体積</span><span class="cn" lang="zh-cn">体积</span></h2>
-    <input id="liters" type="number" value="0">&nbsp;L
-    <input id="USGallons" type="number" value="0">&nbsp;US Gallons&nbsp;
-    <input id="UKGallons" type="number" value="0">&nbsp;UK Gallons
-    <div>
-      <input id="changeGallons" type="button" value="L → gal">
-      <input id="changeLiters" type="button" value="gal(US) → L, gal(UK)">
-      <input id="changeLitersUSG" type="button" value="gal(UK) → L, gal(US)">
-    </div>
-    <h2><span class="en" lang="en">Speed</span><span class="ja" lang="ja">速度</span><span class="cn" lang="zh-cn">速度</span></h2>
-    <input id="mps" type="number" value="0">&nbsp;m/s<br>
-    <input id="kmph" type="number" value="0">&nbsp;kmph
-    <div>
-      <input id="changeKmph" type="button" value="m/s → kmph">
-      <input id="changeMps" type="button" value="kmph → m/s">
-    </div>
-    <h2><span class="en" lang="en">Currency</span><span class="ja" lang="ja">通貨</span><span class="cn" lang="zh-cn">货币</span></h2>
-    <p>Note: This calculation is experimental.</p>
-    <p>
-      <input id="btnHReload" type="button" value="Reload">
-    </p>
-    <p id="textCurrencyDate"></p>
-    <input id="JPY" type="number" value="0" min="0">&nbsp;JPY,&nbsp;
-    <input id="USD" type="number" value="0" step="0.01" min="0">&nbsp;USD,&nbsp;
-    <input id="EUR" type="number" value="0" step="0.01" min="0">&nbsp;EUR,&nbsp;
-    <input id="GBP" type="number" value="0" step="0.01" min="0">&nbsp;GBP,&nbsp;
-    <input id="AUD" type="number" value="0" step="0.01" min="0">&nbsp;AUD,&nbsp;
-    <input id="CAD" type="number" value="0" step="0.01" min="0">&nbsp;CAD
-    <div id="btnCurrency">
-      <input id="changeJPY" type="button" value="JPY → Other currencies">
-      <input id="changeUSD" type="button" value="USD → Other currencies">
-      <input id="changeEUR" type="button" value="EUR → Other currencies">
-      <input id="changeGBP" type="button" value="GBP → Other currencies">
-      <input id="changeAUD" type="button" value="AUD → Other currencies">
-      <input id="changeCAD" type="button" value="CAD → Other currencies">
+    <div id="currency">
+      <h2><span class="en" lang="en">Currency</span><span class="ja" lang="ja">通貨</span><span class="cn" lang="zh-cn">货币</span></h2>
+      <p>Note: This calculation is experimental.</p>
+      <p>
+        <input class="btn btn-outline-primary" id="btnHReload" type="button" value="Reload">
+      </p>
+      <p id="textCurrencyDate"></p>
+      <input class="mb-3" id="JPY" type="number" value="0" min="0">&nbsp;JPY,&nbsp;
+      <input class="mb-3" id="USD" type="number" value="0" step="0.01" min="0">&nbsp;USD,&nbsp;
+      <input class="mb-3" id="EUR" type="number" value="0" step="0.01" min="0">&nbsp;EUR,&nbsp;
+      <input class="mb-3" id="GBP" type="number" value="0" step="0.01" min="0">&nbsp;GBP,&nbsp;
+      <input class="mb-3" id="AUD" type="number" value="0" step="0.01" min="0">&nbsp;AUD,&nbsp;
+      <input class="mb-3" id="CAD" type="number" value="0" step="0.01" min="0">&nbsp;CAD
+      <div id="btnCurrency">
+        <input class="btn btn-outline-primary" id="changeJPY" type="button" value="JPY → Other currencies">
+        <input class="btn btn-outline-primary" id="changeUSD" type="button" value="USD → Other currencies">
+        <input class="btn btn-outline-primary" id="changeEUR" type="button" value="EUR → Other currencies">
+        <input class="btn btn-outline-primary" id="changeGBP" type="button" value="GBP → Other currencies">
+        <input class="btn btn-outline-primary" id="changeAUD" type="button" value="AUD → Other currencies">
+        <input class="btn btn-outline-primary" id="changeCAD" type="button" value="CAD → Other currencies">
+      </div>
     </div>
     <p id="copyright"><small>2019 &copy; EU-Create. All rights reserved.</small></p>
   </body>
